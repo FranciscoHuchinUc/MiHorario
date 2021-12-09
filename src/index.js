@@ -1,7 +1,8 @@
-const app = require("./config/server");
+const app = require('./config/server');
 
-require("./app/routes/users");
+require('./app/routes/users')(app);
 
-app.listen(app, get('port')), () => {
-    console.log('server on port', app.get('port'));
-}
+// starting the server
+app.listen(app.get('port'), () => {
+  console.log('server on port', app.get('port'));
+});
