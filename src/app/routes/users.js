@@ -1,4 +1,3 @@
-const bcryptjs = require("bcryptjs");
 const dbConnection = require("../../config/dbConnection");
 
 module.exports = (app) => {
@@ -15,7 +14,7 @@ module.exports = (app) => {
     const pass = req.body.pass;
     if (gmail && pass) {connection.query("SELECT * FROM Usuario WHERE gmail = ? AND contrasenia = ?",[gmail, pass],async (err, result) => {
           if (result.length > 0){
-            res.send('Login Sucess!');
+            res.render('register');
           } else {
             res.send('Incorrect Username and/or Password!');
           }
