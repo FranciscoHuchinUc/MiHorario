@@ -73,7 +73,7 @@ h1 {
     font-family: 'Poppins', sans-serif;
 }
 
-.login-box input[type="button"]{
+.login-box input[type="submit"]{
     border: none;
     outline: none;
     height: 35px;

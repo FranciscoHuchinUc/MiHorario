@@ -30,14 +30,14 @@
     <div class="login-box">
       <img class="avatar" src="img/iconUser.svg" />
       <h2>Login</h2>
-      <form>
+      <form action="auth" method="post">
         <!--EMAIL-->
-        <input type="text" id="email" placeholder="Email" />
+        <input type="text" name="gmail" id="gmail" placeholder="Email" required />
 
         <!--PASSWORD-->
-        <input type="password" id="password" placeholder="Password" />
+        <input type="password" name="pass" id="pass" placeholder="Password" required />
 
-        <input type="button" value="Login" onclick="validar()" />
+        <input type="submit" value="Login" />
       </form>
     </div>
   </body>
