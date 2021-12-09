@@ -1,14 +1,17 @@
-const dbConnection = require('../../config/dbConnection');
+const dbConnection = require("../../config/dbConnection");
 
-module.exports = app => {
-
+module.exports = (app) => {
   const connection = dbConnection();
-  connection.query('USE bdhorario');
+  connection.query("USE bdhorario");
 
-  app.get('/', (req, res) => {
-    connection.query('SELECT * FROM Usuario', (err, result) => {
+  app.get("/", (req, res) => {
+    res.render("users");
+  });
+
+  app.get("/", (req, res) => {
+    connection.query("SELECT * FROM Usuario", (err, result) => {
       //console.log(result);
-      users: result
+      users: result;
     });
   });
 
@@ -28,6 +31,4 @@ module.exports = app => {
       }
     });
   });*/
-
-
-}
+};
