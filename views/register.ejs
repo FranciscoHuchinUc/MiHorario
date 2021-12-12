@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet"/>
+
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/register.css'>
+
+    <title>Register</title>
+</head>
+<body>
+
+    <div class="register-box">
+        <a>
+            <img class="avatar" src="img/iconReg.svg" />
+        </a>
+        <h2>Registro Usuarios</h2>
+
+        <form action="/save" method="post">
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required />
+            <input type="text" name="apellido" id="apellido" placeholder="Apellido" required />
+            <input type="text" name="email" id="email" placeholder="E-Mail" required />
+            <input type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña" required />
+            <input type="text" name="coordinacion" id="coordinacion" placeholder="Coordinacion" required />
+            <div class="content-select">
+                <select class="coord" name="coordinacion" id="coordinacion">
+                    <option></option>
+                </select>
+                <select class="rol" name="rol" id="Rol">
+                    <option value="Administrador">Administrador</option>
+                    <option value="Usuario">Usuario</option>
+                </select>
+            </div>
+
+            <div class="buttons">
+                <button type="submit" alt="Cancelar" class="btnCancel">Cancelar</button> 
+                <button type="submit" alt="Agregar" class="btnAdd">Guardar </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- TABLA DE REGISTROS -->
+
+    <div class="table-box">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>E-mail</th>
+                    <th>Coordinacion</th>
+                    <th>Activo</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% results.forEach((user) => { %>
+                <tr>
+                    <td> <%= user.nombre %>   </td>
+                    <td> <%= user.apellido %> </td>
+                    <td> <%= user.gmail %>    </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>
+                        <a href="/edit" class="btnEdit">DELETE</a>
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
