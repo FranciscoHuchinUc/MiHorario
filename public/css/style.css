@@ -22,7 +22,6 @@ h1 {
     width: 320px;
     height: 460px;
     background: #E8E8E8;
-    color: #2E2E2E;
     border-radius: 10px;
     top: 50%;
     left: 50%;
@@ -42,10 +41,11 @@ h1 {
     margin: 0;
     padding: 0 0 20px;
     position: relative;
-    top: 120px;
+    top: 100px;
     text-align: center;
-    font-size: 22px;
+    font-size: 28px;
     font-family: 'Poppins', sans-serif;
+    color: #2E2E2E;
 }
 
 .login-box form {
@@ -66,24 +66,39 @@ h1 {
 .login-box input[type="password"] {
     height: 40px;
     padding: 0 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     outline-color: #b6b6b6;
     color: #2E2E2E;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
 }
 
-.login-box input[type="submit"]{
+.login-box button[type="submit"] {
     border: none;
     outline: none;
     height: 35px;
     width: 270px;
     margin: 50px auto;
     background: #DD9141;
+    color: #E8E8E8;
     font-size: 18px;
-    border-radius: 20px;
+    font-weight: bold;
+    border-radius: 10px;
     font-family: 'Poppins', sans-serif;
 }
+
+.login-box button[type="submit"]:active,
+.login-box button[type="submit"]:before{
+    background: #e0b587;
+    color: #E8E8E8;
+}
+
+.login-box button[type="submit"]:hover{
+  background: #102770;
+  color: #ffeba7;
+  box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+}
+
 
 
 /* LOADER */

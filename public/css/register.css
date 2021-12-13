@@ -11,8 +11,9 @@ body {
 h2 {
     position: relative;
     top: 100px;
-    color: white;
-    font-size: 30px;
+    padding-bottom: 10px;
+    color: #2E2E2E;
+    font-size: 24px;
     font-family: 'Poppins', sans-serif;
     text-align: center;
 }
@@ -24,7 +25,7 @@ h2 {
     color: #2E2E2E;
     border-radius: 10px;
     top: 50%;
-    left: 15%;
+    left: 17%;
     position: absolute;
     transform: translate(-50%, -50%);
 }
@@ -44,12 +45,11 @@ h2 {
     justify-content: center;
     align-items: center;
     margin-top: 100px;
-    padding-top: 20px;
   }
 
   .register-box input {
     width: 80%;
-    margin-bottom: 20px;
+    margin-top: 15px;
 }
 
   .register-box input[type="text"],
@@ -60,23 +60,29 @@ h2 {
     outline: none;
     border: none;
     color: #2E2E2E;
-    font-size: 13px;
+    font-size: 14px;
     font-family: 'Poppins', sans-serif;
 }
 
-.content-input input,
-.content-select select{
-	display: inline-block;
+.content-select {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-select .coord, 
+.content-select .rol {
 	cursor: pointer;
   	height: 30px;
     width: 290px;
-    margin-left: 25px;
+    margin-bottom: 10px;
+    margin-top: 5px;
   	outline: none; 
   	border: none;
 	font-family: 'Poppins', sans-serif;
 	border:2px solid rgba(0,0,0,0.2);
     border-radius: 12px;
-    position: relative;
 }
 
 .register-box .buttons{
@@ -84,18 +90,31 @@ h2 {
     padding: 20px 0;
 }
 
+.iconOpt {
+    width: 40px;
+    height: 40px;
+}
+
 .register-box .btnCancel {
+    cursor: pointer;
     height: 50px;
     width: 50px;
     position: relative;
     right: 90px;
+    background: #ec2d56;
+    border: none;
+	border-radius: 50px;
 }
 
 .register-box .btnAdd {
+    cursor: pointer;
     height: 50px;
     width: 50px;
     position: relative;
     left: 80px;
+    background: #ec2d9c;
+    border: none;
+	border-radius: 50px;
 }
 
 .table-box {
@@ -117,11 +136,10 @@ h2 {
     margin: 10px;
   }
 
-  .styled-table {
+.styled-table {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
-    font-family: sans-serif;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
@@ -151,9 +169,7 @@ h2 {
     border-bottom: 2px solid #ec9a2d;
 }
 
-.btnEdit {
-    color: #17a2b8;
-    background-color: transparent;
-    background-image: none;
-    border-color: #17a2b8;
+.styled-table .btnDelete .userDel {
+    width: 20px;
+    height: 20px;
 }

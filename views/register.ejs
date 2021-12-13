@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet"/>
 
     <link rel='stylesheet' type='text/css' media='screen' href='/css/register.css'>
+    
+    <link rel="shortcut icon" href="img/iconReg.svg">
 
     <title>Register</title>
 </head>
@@ -28,7 +30,9 @@
             <input type="text" name="coordinacion" id="coordinacion" placeholder="Coordinacion" required />
             <div class="content-select">
                 <select class="coord" name="coordinacion" id="coordinacion">
-                    <option></option>
+                    <% results.forEach((user) => { %>
+                    <option> <%= user.carrera %> </option>
+                    <% }); %>
                 </select>
                 <select class="rol" name="rol" id="Rol">
                     <option value="Administrador">Administrador</option>
@@ -37,8 +41,12 @@
             </div>
 
             <div class="buttons">
-                <button type="submit" alt="Cancelar" class="btnCancel">Cancelar</button> 
-                <button type="submit" alt="Agregar" class="btnAdd">Guardar </button>
+                <button type="submit" alt="Cancelar" class="btnCancel" title="Cancelar">
+                    <img class="iconOpt" src="img/iconCancel.svg"/>
+                </button> 
+                <button type="submit" alt="Agregar" class="btnAdd" title="Agregar">
+                    <img class="iconOpt" src="img/iconAdd.svg"/>
+                </button>
             </div>
         </form>
     </div>
@@ -63,10 +71,12 @@
                     <td> <%= user.nombre %>   </td>
                     <td> <%= user.apellido %> </td>
                     <td> <%= user.gmail %>    </td>
-                    <td>  </td>
-                    <td>  </td>
+                    <td> <%= user.carrera %> </td>
+                    <td>  <input type="checkbox"/> </td>
                     <td>
-                        <a href="/edit" class="btnEdit">DELETE</a>
+                        <a href="/deleteuser" class="btnDelete">
+                            <img class="userDel" src="img/iconDelete.svg" title="Borrar"/>
+                        </a>
                     </td>
                 </tr>
                 <% }); %>
