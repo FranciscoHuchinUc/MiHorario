@@ -21,7 +21,7 @@ exports.save = (req, res) => {
     const apellido = req.body.apellido;
     const email = req.body.email;
     const contrasenia = req.body.contrasenia;
-    const rol = req.body.rol;
+    const carrera = req.body.carrera;
 
     conexion.query('INSERT INTO Usuario SET ?', {
         nombre:nombre,
@@ -30,7 +30,7 @@ exports.save = (req, res) => {
         apellidom: 'NAN',
         gmail:email,
         contrasenia:contrasenia,
-        carrera: rol
+        carrera: carrera
     }, (error, results) => {
         if(error) {
             console.log(error);

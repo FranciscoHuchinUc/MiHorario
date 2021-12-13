@@ -23,18 +23,17 @@
         <h2>Registro Usuarios</h2>
 
         <form action="/save" method="post">
-            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required />
-            <input type="text" name="apellido" id="apellido" placeholder="Apellido" required />
+            <input type="text" name="nombre" id="nombre" placeholder="Primer Nombre" required />
+            <input type="text" name="snombre" id="snombre" placeholder="Segundo Nombre" required />
+            <input type="text" name="apellido" id="apellido" placeholder="Apellido Paterno" required />
+            <input type="text" name="apellidom" id="apellidom" placeholder="Apellido Materno" required />
             <input type="text" name="email" id="email" placeholder="E-Mail" required />
             <input type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña" required />
-            <input type="text" name="coordinacion" id="coordinacion" placeholder="Coordinacion" required />
             <div class="content-select">
-                <select class="coord" name="coordinacion" id="coordinacion">
-                    <% results.forEach((user) => { %>
-                    <option> <%= user.carrera %> </option>
-                    <% }); %>
+                <select class="coord" name="carrera" id="carrera">
+                    <option value="ISC">ISC</option>
                 </select>
-                <select class="rol" name="rol" id="Rol">
+                <select class="rol" name="rol" id="rol">
                     <option value="Administrador">Administrador</option>
                     <option value="Usuario">Usuario</option>
                 </select>
@@ -42,10 +41,10 @@
 
             <div class="buttons">
                 <button type="submit" alt="Cancelar" class="btnCancel" title="Cancelar">
-                    <img class="iconOpt" src="img/iconCancel.svg"/>
+                    Cancelar
                 </button> 
                 <button type="submit" alt="Agregar" class="btnAdd" title="Agregar">
-                    <img class="iconOpt" src="img/iconAdd.svg"/>
+                    Registrar
                 </button>
             </div>
         </form>
@@ -61,7 +60,6 @@
                     <th>Apellido</th>
                     <th>E-mail</th>
                     <th>Coordinacion</th>
-                    <th>Activo</th>
                     <th>Accion</th>
                 </tr>
             </thead>
@@ -72,7 +70,6 @@
                     <td> <%= user.apellido %> </td>
                     <td> <%= user.gmail %>    </td>
                     <td> <%= user.carrera %> </td>
-                    <td>  <input type="checkbox"/> </td>
                     <td>
                         <a href="/deleteuser" class="btnDelete">
                             <img class="userDel" src="img/iconDelete.svg" title="Borrar"/>

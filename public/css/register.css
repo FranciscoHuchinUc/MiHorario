@@ -3,16 +3,23 @@
     padding: 0;
 }
 
+:root {
+    --white: #E8E8E8;
+    --black: #2E2E2E;
+    --primaryColor: #ec832d;
+    --fullwidth: 100%;
+  }
+
 body {
-    background: #2E2E2E;
+    background: var(--black);
     height: 100vh;
 }
 
 h2 {
     position: relative;
-    top: 100px;
+    top: 90px;
     padding-bottom: 10px;
-    color: #2E2E2E;
+    color: var(--black);
     font-size: 24px;
     font-family: 'Poppins', sans-serif;
     text-align: center;
@@ -21,8 +28,8 @@ h2 {
 .register-box {
     width: 350px;
     height: 550px;
-    background: #E8E8E8;
-    color: #2E2E2E;
+    background: var(--white);
+    color: var(--black);
     border-radius: 10px;
     top: 50%;
     left: 17%;
@@ -34,7 +41,6 @@ h2 {
     width: 100px;
     height: 100px;
     position:  absolute;
-    top: 10px;
     left: calc(50% - 50px);
 }
 
@@ -44,7 +50,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 80px;
   }
 
   .register-box input {
@@ -56,10 +62,11 @@ h2 {
   .register-box input[type="password"]{
     height: 30px;
     padding: 0 5px;
-    border-radius: 10px;
-    outline: none;
-    border: none;
+    border-radius: 8px;
+    outline-color: #b6b6b6;
     color: #2E2E2E;
+    border: none;
+    color: var(--black);
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
 }
@@ -76,13 +83,12 @@ h2 {
 	cursor: pointer;
   	height: 30px;
     width: 290px;
-    margin-bottom: 10px;
-    margin-top: 5px;
+    margin-top: 10px;
   	outline: none; 
   	border: none;
 	font-family: 'Poppins', sans-serif;
 	border:2px solid rgba(0,0,0,0.2);
-    border-radius: 12px;
+    border-radius: 8px;
 }
 
 .register-box .buttons{
@@ -90,38 +96,57 @@ h2 {
     padding: 20px 0;
 }
 
-.iconOpt {
-    width: 40px;
-    height: 40px;
-}
-
 .register-box .btnCancel {
     cursor: pointer;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 100px;
     position: relative;
-    right: 90px;
+    right: 10px;
     background: #ec2d56;
+    color: #E8E8E8;
     border: none;
-	border-radius: 50px;
+	border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .register-box .btnAdd {
     cursor: pointer;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 160px;
     position: relative;
-    left: 80px;
-    background: #ec2d9c;
+    left: 10px;
+    background: var(--primaryColor);
+    color: #E8E8E8;
     border: none;
-	border-radius: 50px;
+	border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.register-box .btnAdd:active,
+.register-box .btnAdd:before {
+    background: var(--primaryColor);
+    color: var(--white);
+}
+
+.register-box .btnAdd:hover {
+    background: #e9944f;
+}
+
+.register-box .btnCancel:active,
+.register-box .btnCancel:before {
+    background: #ec2d56;
+    color: var(--white);
+}
+
+.register-box .btnCancel:hover {
+    background: #f05879;
 }
 
 .table-box {
     width: 800px;
     height: 550px;
-    background: #E8E8E8;
-    color: #2E2E2E;
+    background: var(--white);
+    color: var(--black);
     border-radius: 10px;
     top: 50%;
     left: 65%;
@@ -145,7 +170,7 @@ h2 {
 }
 
 .styled-table thead tr {
-    background-color: #ec9a2d;
+    background-color: var(--primaryColor);
     color: #ffffff;
     text-align: left;
 }
@@ -166,7 +191,7 @@ h2 {
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #ec9a2d;
+    border-bottom: 2px solid var(--primaryColor);
 }
 
 .styled-table .btnDelete .userDel {

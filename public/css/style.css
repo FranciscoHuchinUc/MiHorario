@@ -4,8 +4,15 @@
     border: 0;
 }
 
+:root {
+  --white: #E8E8E8;
+  --black: #2E2E2E;
+  --primaryColor: #ec832d;
+  --fullwidth: 100%;
+}
+
 body {
-    background: #2E2E2E;
+    background: var(--black);
     height: 100vh;
 }
 
@@ -21,7 +28,7 @@ h1 {
 .login-box {
     width: 320px;
     height: 460px;
-    background: #E8E8E8;
+    background: var(--white);
     border-radius: 10px;
     top: 50%;
     left: 50%;
@@ -45,7 +52,7 @@ h1 {
     text-align: center;
     font-size: 28px;
     font-family: 'Poppins', sans-serif;
-    color: #2E2E2E;
+    color: var(--black);
 }
 
 .login-box form {
@@ -60,43 +67,55 @@ h1 {
 .login-box input {
     width: 80%;
     margin-bottom: 20px;
+    margin-left: 9px;
 }
 
 .login-box input[type="text"],
 .login-box input[type="password"] {
     height: 40px;
-    padding: 0 10px;
-    border-radius: 10px;
+    padding-left: 40px;
+    border-radius: 8px;
     outline-color: #b6b6b6;
-    color: #2E2E2E;
+    color: var(--black);
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
 }
+
+.login-box .inputWithIcon i {
+  position: relative;
+  left: 8px;
+  top: -55px;
+  padding: 7px 10px;
+  color: #AAA;
+  transition: 0.3s;
+}
+
+.login-box .inputWithIcon :focus + i {
+  color: var(--primaryColor);
+} 
 
 .login-box button[type="submit"] {
     border: none;
     outline: none;
     height: 35px;
     width: 270px;
-    margin: 50px auto;
-    background: #DD9141;
-    color: #E8E8E8;
+    margin: 20px auto;
+    background: var(--primaryColor);
+    color: var(--white);
     font-size: 18px;
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 8px;
     font-family: 'Poppins', sans-serif;
 }
 
 .login-box button[type="submit"]:active,
 .login-box button[type="submit"]:before{
-    background: #e0b587;
-    color: #E8E8E8;
+    background: var(--primaryColor);
+    color: var(--white);
 }
 
 .login-box button[type="submit"]:hover{
-  background: #102770;
-  color: #ffeba7;
-  box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+  background: #e9944f;
 }
 
 

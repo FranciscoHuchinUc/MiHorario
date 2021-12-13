@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -31,10 +32,16 @@
       <h2>Log In</h2>
       <form action="auth" method="post">
         <!--EMAIL-->
-        <input type="text" name="gmail" id="gmail" placeholder="Email" required />
+        <div class="inputWithIcon">
+          <input type="text" name="gmail" id="gmail" placeholder="Email" required />
+          <i class='bx bxs-user'></i>
+        </div>
 
         <!--PASSWORD-->
-        <input type="password" name="contrasenia" id="contrasenia" placeholder="Password" required />
+        <div class="inputWithIcon">
+          <input type="password" name="contrasenia" id="contrasenia" placeholder="Password" required />
+          <i class='bx bxs-lock'></i>
+        </div>
 
         <button class="login-btn" type="submit"> Login </button>
       </form>
