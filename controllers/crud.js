@@ -1,19 +1,19 @@
 const conexion = require('../database/db');
 
-exports.auth = async (req, res) => {
+exports.auth = (req, res) => {
     const gmail = req.body.gmail;
     const contrasenia = req.body.contrasenia;
-    
-    conexion.query('SELECT * FROM Usuario WHERE gmail = ? AND contrasenia = ?',[
-        gmail,
-        contrasenia
-    ], async (err, result) => {
-        if (result > 0){
-            res.send('Login Sucess!');
-        } else {
-            res.send('Incorrect Username and/or Password!');
-        }
-    })
+    if(gmail && contrasenia) {
+        conexion.query('SELECT * FROM `Usuario` WHERE `gmail` = ? AND `contrasenia` = ?', [gmail, contrasenia], (err, result, fields) => {
+            if(err) throw err
+
+            if(result.length <= 0) {
+                res.send('Error');
+            } else {
+                res.send('Login');
+            }
+        });
+    }
 }
 
 exports.save = (req, res) => {
