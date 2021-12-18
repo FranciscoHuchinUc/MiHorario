@@ -10,8 +10,9 @@ router.get("/", (req, res) => {
 });
 
 // LLAMAMOS LOS METODOS CRUDS
-router.post('/save', crud.save);
-router.post('/auth', crud.auth);
-router.get('/register', crud.register);
+router.post('/save', crud.saveUser);
+router.post('/auth', crud.authUser);
+router.get('/register', crud.registerUser);
+router.get('/deleteuser/:id', crud.deleteUser);
 
 module.exports = router;

@@ -1,6 +1,6 @@
 const conexion = require('../database/db');
 
-exports.auth = (req, res) => {
+exports.authUser = (req, res) => {
     const gmail = req.body.gmail;
     const contrasenia = req.body.contrasenia;
     if(gmail && contrasenia) {
@@ -16,7 +16,7 @@ exports.auth = (req, res) => {
     }
 }
 
-exports.save = (req, res) => {
+exports.saveUser = (req, res) => {
     const primer_nombre = req.body.primer_nombre;
     const segundo_nombre = req.body.segundo_nombre;
     const apellidop = req.body.apellidop;
@@ -45,12 +45,23 @@ exports.save = (req, res) => {
 
 }
 
-exports.register = (req, res) => {
+exports.registerUser = (req, res) => {
     conexion.query('SELECT * FROM Usuario', (error, results) => {
         if(error){
             throw error;
         } else {
             res.render('register', {results:results});
+        }
+    })
+}
+
+exports.deleteUser = (req, res) => {
+    const id = req.params.id;
+    conexion.query('DELETE FROM Usuario WHERE id = ?' , [id], (err, results) => {
+        if(err) {
+            throw err;
+        } else {
+            res.redirect('/register');
         }
     })
 }

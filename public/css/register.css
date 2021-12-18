@@ -28,7 +28,7 @@ body {
     color: var(--black);
     border-radius: 10px;
     top: 50%;
-    left: 17%;
+    left: 15%;
     position: absolute;
     transform: translate(-50%, -50%);
 }
@@ -163,13 +163,13 @@ body {
 }
 
 .table-box {
-    width: 860px;
+    width: 895px;
     height: 550px;
     background: var(--white);
     color: var(--black);
     border-radius: 10px;
     top: 50%;
-    left: 65%;
+    left: 64%;
     position: absolute;
     transform: translate(-50%, -50%);
 }

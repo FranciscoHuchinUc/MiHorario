@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,14 +8,17 @@
 }
 
 :root {
-  --white: #E8E8E8;
-  --black: #2E2E2E;
-  --primaryColor: #ec832d;
+  --white: #FFFFFF;
+  --lightGray: #E8E8E8;
+  --black: #000000;
+  --darkGray: #2C2C2C;
+  --formColor: #F0F0F0;
+  --primaryColor: #EC832D;
   --fullwidth: 100%;
 }
 
 body {
-    background: var(--black);
+    background: var(--darkGray);
     height: 100vh;
 }
 
@@ -66,7 +72,6 @@ h1 {
 
 .login-box input {
     width: 80%;
-    margin-bottom: 20px;
     margin-left: 9px;
 }
 
@@ -76,6 +81,7 @@ h1 {
     padding-left: 40px;
     border-radius: 8px;
     outline-color: #b6b6b6;
+    background: var(--formColor);
     color: var(--black);
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
@@ -83,8 +89,8 @@ h1 {
 
 .login-box .inputWithIcon i {
   position: relative;
-  left: 8px;
-  top: -55px;
+  left: 9px;
+  top: -35px;
   padding: 7px 10px;
   color: #AAA;
   transition: 0.3s;
@@ -129,7 +135,7 @@ h1 {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    background: #E8E8E8;
+    background: var(--white);
   }
    
   .loader-container .loader{
