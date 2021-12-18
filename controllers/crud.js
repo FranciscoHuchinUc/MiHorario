@@ -17,20 +17,24 @@ exports.auth = (req, res) => {
 }
 
 exports.save = (req, res) => {
-    const nombre = req.body.nombre;
-    const apellido = req.body.apellido;
-    const email = req.body.email;
+    const primer_nombre = req.body.primer_nombre;
+    const segundo_nombre = req.body.segundo_nombre;
+    const apellidop = req.body.apellidop;
+    const apellidom = req.body.apellidom;
+    const gmail = req.body.gmail;
     const contrasenia = req.body.contrasenia;
-    const carrera = req.body.carrera;
+    const coordinacion = req.body.coordinacion;
+    const rol = req.body.rol;
 
     conexion.query('INSERT INTO Usuario SET ?', {
-        nombre:nombre,
-        segundo_nombre: 'NAN',
-        apellido:apellido,
-        apellidom: 'NAN',
-        gmail:email,
+        primer_nombre:primer_nombre,
+        segundo_nombre:segundo_nombre,
+        apellidop:apellidop,
+        apellidom:apellidom,
+        gmail:gmail,
         contrasenia:contrasenia,
-        carrera: carrera
+        coordinacion:coordinacion,
+        rol:rol
     }, (error, results) => {
         if(error) {
             console.log(error);

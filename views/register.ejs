@@ -4,9 +4,6 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet"/>
 
     <link rel='stylesheet' type='text/css' media='screen' href='/css/register.css'>
     
@@ -17,23 +14,33 @@
 <body>
 
     <div class="register-box">
-        <a>
-            <img class="avatar" src="img/iconReg.svg" />
-        </a>
-        <h2>Registro Usuarios</h2>
+        <div class="title-box">
+            <p class="title">REGISTRO DE</p>
+            <p class="subtitle">USUARIOS</p>
+        </div>
 
         <form action="/save" method="post">
-            <input type="text" name="nombre" id="nombre" placeholder="Primer Nombre" required />
-            <input type="text" name="snombre" id="snombre" placeholder="Segundo Nombre" required />
-            <input type="text" name="apellido" id="apellido" placeholder="Apellido Paterno" required />
+            <input type="text" name="primer_nombre" id="primer_nombre" placeholder="Primer Nombre" required />
+            <input type="text" name="segundo_nombre" id="segundo_nombre" placeholder="Segundo Nombre" required />
+            <input type="text" name="apellidop" id="apellidop" placeholder="Apellido Paterno" required />
             <input type="text" name="apellidom" id="apellidom" placeholder="Apellido Materno" required />
-            <input type="text" name="email" id="email" placeholder="E-Mail" required />
+            <input type="text" name="gmail" id="gmail" placeholder="E-Mail" required />
             <input type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña" required />
             <div class="content-select">
-                <select class="coord" name="carrera" id="carrera">
-                    <option value="ISC">ISC</option>
+                <select class="coord" name="coordinacion" id="coordinacion">
+                    <option disabled selected >Seleccione Su Coordinacion</option>
+                    <option value="IBQA">Ingenieria Bioquimica</option>
+                    <option value="IIAL">Ingeniería en Industrias Alimentarias</option>
+                    <option value="IMAT">Ingeniería en Materiales</option>
+                    <option value="ISIC">Ingeniería en Sistemas Computacionales</option>
+                    <option value="IIND">Ingeniería Industrial</option>
+                    <option value="IMCT">Ingeniería Mecatrónica</option>
+                    <option value="LADM">Licenciatura en Administración</option>
+                    <option value="IINF">Ingeniería Informática</option>
+                    <option value="IIAS">Ingeniería en Innovación Agrícola Sustentable</option>
                 </select>
                 <select class="rol" name="rol" id="rol">
+                    <option disabled selected>Seleccione Su Rol</option>
                     <option value="Administrador">Administrador</option>
                     <option value="Usuario">Usuario</option>
                 </select>
@@ -66,10 +73,10 @@
             <tbody>
                 <% results.forEach((user) => { %>
                 <tr>
-                    <td> <%= user.nombre %>   </td>
-                    <td> <%= user.apellido %> </td>
+                    <td> <%= user.primer_nombre + ' ' + user.segundo_nombre %>   </td>
+                    <td> <%= user.apellidop + ' ' + user.apellidom %> </td>
                     <td> <%= user.gmail %>    </td>
-                    <td> <%= user.carrera %> </td>
+                    <td> <%= user.coordinacion %> </td>
                     <td>
                         <a href="/deleteuser" class="btnDelete">
                             <img class="userDel" src="img/iconDelete.svg" title="Borrar"/>
