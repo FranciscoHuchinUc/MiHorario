@@ -10,7 +10,7 @@ exports.authUser = (req, res) => {
             if(result.length <= 0) {
                 res.send('Error');
             } else {
-                res.send('Login');
+                res.redirect('/dashboard');
             }
         });
     }

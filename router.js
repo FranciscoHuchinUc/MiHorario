@@ -9,9 +9,14 @@ router.get("/", (req, res) => {
     res.render('login');
 });
 
+// RUTAS PREDEFINIDAS
+router.get("/dashboard", (req, res) => {
+    res.render('dashboard');
+});
+
 // LLAMAMOS LOS METODOS CRUDS
-router.post('/save', crud.saveUser);
-router.post('/auth', crud.authUser);
+router.post('/saveUser', crud.saveUser);
+router.post('/authUser', crud.authUser);
 router.get('/register', crud.registerUser);
 router.get('/deleteuser/:id', crud.deleteUser);
 
