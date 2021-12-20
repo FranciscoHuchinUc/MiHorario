@@ -59,8 +59,12 @@ body {
     grid-template-columns: repeat(3,320px);  /* 3 columns */
     grid-template-rows: repeat(3,170px); /* 3 rows  */
     grid-gap:50px 30px;
-    justify-content: center;
-    align-items: center;
+}
+
+.dashboard-box .grid a {
+    text-decoration: none;
+    color: var(--black);
+    text-align: center;
 }
 
 .dashboard-box .grid .box-sq {
@@ -72,16 +76,21 @@ body {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 19px;
     background: var(--formColor);
 }
 
 .dashboard-box .grid .box-sq i {
-    padding: 15px;
+    padding-top: 30px;
+}
+
+.dashboard-box .grid .box-sq p {
+    padding-top: 10px;
 }
 
 .dashboard-box .grid .box-sq .iconify {
-    padding: 15px;
+    padding-top: 40px;
+    padding-bottom: 2px;
     font-size: 35px;
 }
 
