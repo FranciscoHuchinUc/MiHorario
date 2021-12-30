@@ -31,53 +31,20 @@
                     <button type="submit" alt="Cancelar" class="btnCancel" title="Cancelar">
                         Cancelar
                     </button> 
-                    <button type="submit" alt="Agregar" class="btnAdd" title="Agregar">
+                    <button type="submit" alt="Registrar" class="btnAdd" title="Registrar">
                         Registrar
                     </button>
                 </div>
             </form>
 
             <div class="grid">
-                <div class="box-sq">
-                    <i class='bx bxl-trello'></i>
-                    <p class="title-g">Nombre</p>
-                    <p class="subtitle-g">Semestre(s) </p>
-                </div>
-                <div class="box-sq">
-                    <i class='bx bxl-trello'></i>
-                    <p class="title-g">Nombre</p>
-                    <p class="subtitle-g">Semestre(s) </p>
-                </div>
-                <div class="box-sq">
-                    <i class='bx bxl-trello'></i>
-                    <p class="title-g">Nombre</p>
-                    <p class="subtitle-g">Semestre(s) </p>
-                </div>
-                <div class="box-sq">
-                    <i class='bx bxl-trello'></i>
-                    <p class="title-g">Nombre</p>
-                    <p class="subtitle-g">Semestre(s) </p>
-                </div>
-                <div class="box-sq">
-                    <i class='bx bxl-trello'></i>
-                    <p class="title-g">Nombre</p>
-                    <p class="subtitle-g">Semestre(s) </p>
-                </div>
-                <div class="box-sq">
-                    <i class='bx bxl-trello'></i>
-                    <p class="title-g">Nombre</p>
-                    <p class="subtitle-g">Semestre(s) </p>
-                </div>
-                <div class="box-sq">
-                    <i class='bx bxl-trello'></i>
-                    <p class="title-g">Nombre</p>
-                    <p class="subtitle-g">Semestre(s) </p>
-                </div>
-                <div class="box-sq">
-                    <i class='bx bxl-trello'></i>
-                    <p class="title-g">Nombre</p>
-                    <p class="subtitle-g">Semestre(s) </p>
-                </div>
+                <% for (var i =1; i <=8;  i++ ) { %>
+                    <div class="box-sq">
+                        <i class='bx bxl-trello'></i>
+                        <p class="title-g">Nombre</p>
+                        <p class="subtitle-g">Semestre(s) </p>
+                    </div>
+                <% } %>
             </div>
         </div>
     </div>

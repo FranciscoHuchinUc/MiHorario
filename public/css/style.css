@@ -146,12 +146,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.login-box button[type="submit"]:active,
-.login-box button[type="submit"]:before{
-    background: var(--primaryColor);
-    color: var(--white);
-}
-
 .login-box button[type="submit"]:hover{
   background: var(--primaryColor);
   opacity: 0.8;

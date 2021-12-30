@@ -154,13 +154,28 @@ body {
   font-size: 16px;
 }
 
+.cont-box .form .buttons .btnAdd:hover {
+    color: var(--primaryColor);
+    background: var(--formColor);
+}
+
+.cont-box .form .buttons .btnCancel:active,
+.cont-box .form .buttons .btnCancel:before {
+  background: #ec2d56;
+  color: var(--white);
+}
+
+.cont-box .form .buttons .btnCancel:hover {
+  background: #f05879;
+}
+
 .cont-box .grid {
   position: absolute;
   width: 90%;
   height: 380px;
   padding: 10px;
   left: 4%;
-  top: 110%;
+  top: 115%;
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
