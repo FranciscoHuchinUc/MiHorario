@@ -14,6 +14,10 @@ router.get("/dashboard", (req, res) => {
     res.render('dashboard');
 });
 
+router.get("/carrera", (req, res) => {
+    res.render('carrera');
+});
+
 // LLAMAMOS LOS METODOS CRUDS
 router.post('/saveUser', crud.saveUser);
 router.post('/authUser', crud.authUser);
