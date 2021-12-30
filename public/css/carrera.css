@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root {
+  --white: #FFFFFF;
+  --lightGray: #E8E8E8;
+  --black: #000000;
+  --darkGray: #2C2C2C;
+  --formColor: #F0F0F0;
+  --primaryColor: #0372B0;
+  --fullwidth: 100%;
+}
+
+body {
+  background: var(--darkGray);
+}
+
+.cont-box {
+  position: absolute;
+  width: 98%;
+  height: 95%;
+  top: 14px;
+  left: 14px;
+  border-radius: 5px;
+  background: var(--white);
+}
+
+.cont-box .form-box {
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  border-radius: 5px 5px 0px 0px;
+  background: var(--primaryColor);
+}
+
+.cont-box .form-box .title,
+.cont-box .form-box .subtitle {
+  position: relative;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 54px;
+  color: var(--white);
+}
+
+.cont-box .form-box .title {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+
+.cont-box .form-box .subtitle {
+  position: absolute;
+  left: 30px;
+  top: 60px;
+}
+
+.cont-box .form-box .line {
+  position: absolute;
+  width: 0.25%;
+  height: 90%;
+  left: 25%;
+  top: 5%;
+  background: var(--white);
+}
+
+.cont-box .form {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 30%;
+  padding: 5px;
+}
+
+.cont-box .form label {
+  color: var(--white);
+  font-size: 16px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: bold;
+}
+
+.cont-box .form input {
+  margin-top: 8px;
+}
+
+.cont-box .form input[type="search"],
+.cont-box .form input[type="number"] {
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 5px;
+  outline-color: #b6b6b6;
+  color: #2E2E2E;
+  background: var(--formColor);
+  border: none;
+  color: var(--black);
+  font-size: 14px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+}
+
+.cont-box .form input[type="search"] {
+  width: 450px;
+}
+
+.cont-box .form input[type="number"] {
+  width: 300px;
+}
+
+.cont-box .form .buttons{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 75%;
+  left: 120%;
+}
+
+.cont-box .form .buttons .btnCancel {
+  cursor: pointer;
+  height: 30px;
+  width: 100px;
+  position: relative;
+  right: 15px;
+  background: #ec2d56;
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.cont-box .form .buttons .btnAdd {
+  cursor: pointer;
+  height: 30px;
+  width: 160px;
+  position: relative;
+  left: 15px;
+  background: var(--white);
+  color: var(--black);
+  border: none;
+  border-radius: 5px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.cont-box .grid {
+  position: absolute;
+  width: 90%;
+  height: 380px;
+  padding: 10px;
+  left: 4%;
+  top: 110%;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap:30px 30px;
+  
+  overflow-y: auto;
+}
+
+.cont-box .grid .box-sq {
+  width: 250px;
+  height: 150px;
+  border: none;
+  border-radius: 5px;
+  padding:10px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  text-align: center;
+  background: var(--formColor);
+}
+
+.cont-box .grid .box-sq i {
+  font-size: 60px;
+  padding-top: 10px;
+}
+
+.cont-box .grid .title-g,
+.cont-box .grid .subtitle-g {
+  font-family: 'Poppins';
+  font-style: normal;
+  color: var(--darkGray);
+}
+
+.cont-box .grid .title-g {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cont-box .grid .subtitle-g {
+  font-size: 18px;
+  font-weight: 500;
+}
