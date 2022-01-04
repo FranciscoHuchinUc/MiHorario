@@ -104,6 +104,19 @@ body {
     width: 100%;
     height: 30px;
     bottom: 0px;
+    display: flex;
+    align-content: center;
+    text-align: center;
+    align-items: center;
     border-radius: 0px 0px 5px 5px;
     background: var(--primaryColor);
+}
+
+.dashboard-box .edge marquee {
+    position: absolute;
+    padding: 0 10px;
+    color: var(--formColor);
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
 }
