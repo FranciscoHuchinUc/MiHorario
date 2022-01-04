@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="stylesheet" href="css/forms.css" />
+    <link rel="shortcut icon" href="ttps://img.icons8.com/color/48/000000/university.png">
 
     <title>Registro Carrera</title>
 </head>
@@ -16,19 +17,19 @@
     <div class="cont-box">
         <div class="form-box">
             <p class="title"> REGISTRO DE</p>
-            <p class="subtitle"> CARRERA</p>
+            <p class="subtitle"> AULA/EDIFICIO</p>
 
             <div class="line"></div>
 
             <form class="form">
-                <label>Nombre</label>
-                <input type="search" name="nombre" id="nombre" placeholder="Nombre de la Carrera" required/>
+                <label>Nombre Edificio</label>
+                <input type="search" name="nombre" id="nombre" placeholder="Nombre del Edificio" required/>
 
-                <label>Semestre</label>
-                <input type="number" name="semestre" id="semestre" max="9" min="1" placeholder="Cantidad de Semestres" required/>
+                <label>Numero de Aula</label>
+                <input type="number" name="semestre" id="semestre" max="9" min="1" placeholder="Numero de Aula" required/>
 
                 <div class="buttons">
-                    <button type="submit" alt="Registrar" class="btnAdd" title="Registrar">
+                    <button type="submit" alt="Agregar" class="btnAdd" title="Agregar">
                         Registrar
                     </button>
                 </div>
@@ -37,13 +38,14 @@
             <div class="grid">
                 <% for (var i =1; i <=8;  i++ ) { %>
                     <div class="box-sq">
-                        <i class='bx bxl-trello'></i>
-                        <p class="title-g">Nombre</p>
-                        <p class="subtitle-g">Semestre(s) </p>
+                        <i class='bx bxs-school'></i>
+                        <p class="title-g">Edificio: A</p>
+                        <p class="subtitle-g">Aula: 1 </p>
                     </div>
                 <% } %>
             </div>
         </div>
     </div>
+    
 </body>
 </html>

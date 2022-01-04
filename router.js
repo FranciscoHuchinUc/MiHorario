@@ -18,6 +18,10 @@ router.get("/carrera", (req, res) => {
     res.render('carrera');
 });
 
+router.get("/aula", (req, res) => {
+    res.render('aula');
+});
+
 // LLAMAMOS LOS METODOS CRUDS
 router.post('/saveUser', crud.saveUser);
 router.post('/authUser', crud.authUser);

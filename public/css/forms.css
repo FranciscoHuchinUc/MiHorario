@@ -58,7 +58,7 @@ body {
 .cont-box .form-box .subtitle {
   position: absolute;
   left: 30px;
-  top: 60px;
+  top: 65px;
 }
 
 .cont-box .form-box .line {
@@ -122,22 +122,6 @@ body {
   left: 120%;
 }
 
-.cont-box .form .buttons .btnCancel {
-  cursor: pointer;
-  height: 30px;
-  width: 100px;
-  position: relative;
-  right: 15px;
-  background: #ec2d56;
-  color: var(--white);
-  border: none;
-  border-radius: 5px;
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-}
-
 .cont-box .form .buttons .btnAdd {
   cursor: pointer;
   height: 30px;
@@ -155,18 +139,8 @@ body {
 }
 
 .cont-box .form .buttons .btnAdd:hover {
-    color: var(--primaryColor);
-    background: var(--formColor);
-}
-
-.cont-box .form .buttons .btnCancel:active,
-.cont-box .form .buttons .btnCancel:before {
-  background: #ec2d56;
-  color: var(--white);
-}
-
-.cont-box .form .buttons .btnCancel:hover {
-  background: #f05879;
+  color: var(--primaryColor);
+  background: var(--formColor);
 }
 
 .cont-box .grid {
@@ -175,7 +149,7 @@ body {
   height: 380px;
   padding: 10px;
   left: 4%;
-  top: 115%;
+  top: 110%;
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -201,6 +175,7 @@ body {
 .cont-box .grid .box-sq i {
   font-size: 60px;
   padding-top: 10px;
+  color: var(--darkGray);
 }
 
 .cont-box .grid .title-g,
