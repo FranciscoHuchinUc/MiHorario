@@ -26,6 +26,10 @@ router.get("/docente", (req, res) => {
     res.render('docente');
 });
 
+router.get("/horario", (req, res) => {
+    res.render('horario');
+});
+
 // LLAMAMOS LOS METODOS CRUDS
 router.post('/saveUser', crud.saveUser);
 router.post('/authUser', crud.authUser);
