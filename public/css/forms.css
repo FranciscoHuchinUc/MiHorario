@@ -155,7 +155,32 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-gap:30px 30px;
   
-  overflow-y: auto;
+  overflow: auto;
+}
+.cont-box .grid::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.cont-box .grid::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.cont-box .grid::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+}
+
+.cont-box .grid::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.cont-box .grid::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.cont-box .grid::-webkit-scrollbar-track {
+    border-radius: 10px;  
 }
 
 .cont-box .grid .box-sq {

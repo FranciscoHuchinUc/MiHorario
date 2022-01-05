@@ -169,6 +169,32 @@ body {
     border-radius: 5px;
     top: 14px;
     left: 32%;
+    overflow: auto;
+}
+.table-box::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.table-box::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.table-box::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+}
+
+.table-box::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.table-box::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.table-box::-webkit-scrollbar-track {
+    border-radius: 10px;  
 }
 
 .table-box table {
