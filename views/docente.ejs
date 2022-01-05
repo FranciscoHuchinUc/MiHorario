@@ -5,46 +5,31 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <link rel='stylesheet' type='text/css' media='screen' href='/css/registerForm.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/registerForm.css'>
     
     <link rel="shortcut icon" href="img/iconReg.svg">
 
-    <title>Register</title>
+    <title>Registro Docente</title>
 </head>
 <body>
 
     <div class="register-box">
         <div class="title-box">
             <p class="title">REGISTRO DE</p>
-            <p class="subtitle">USUARIOS</p>
+            <p class="subtitle">DOCENTE</p>
         </div>
 
         <form action="/saveUser" method="post">
+            <input type="text" name="clave" id="clave" placeholder="Clave" required>
             <input type="text" name="primer_nombre" id="primer_nombre" placeholder="Primer Nombre" required />
             <input type="text" name="segundo_nombre" id="segundo_nombre" placeholder="Segundo Nombre" required />
             <input type="text" name="apellidop" id="apellidop" placeholder="Apellido Paterno" required />
             <input type="text" name="apellidom" id="apellidom" placeholder="Apellido Materno" required />
+            <input type="text" name="telefono" id="telefono" placeholder="Numero Telefonico" >
             <input type="text" name="gmail" id="gmail" placeholder="E-Mail" required />
             <input type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña" required />
-            <div class="content-select">
-                <select class="coord" name="coordinacion" id="coordinacion">
-                    <option disabled selected >Seleccione Su Coordinacion</option>
-                    <option value="IBQA">Ingenieria Bioquimica</option>
-                    <option value="IIAL">Ingeniería en Industrias Alimentarias</option>
-                    <option value="IMAT">Ingeniería en Materiales</option>
-                    <option value="ISIC">Ingeniería en Sistemas Computacionales</option>
-                    <option value="IIND">Ingeniería Industrial</option>
-                    <option value="IMCT">Ingeniería Mecatrónica</option>
-                    <option value="LADM">Licenciatura en Administración</option>
-                    <option value="IINF">Ingeniería Informática</option>
-                    <option value="IIAS">Ingeniería en Innovación Agrícola Sustentable</option>
-                </select>
-                <select class="rol" name="rol" id="rol">
-                    <option disabled selected>Seleccione Su Rol</option>
-                    <option value="Administrador">Administrador</option>
-                    <option value="Usuario">Usuario</option>
-                </select>
-            </div>
+            <input type="text" name="dtrabajo" id="dtrabajo" placeholder="Dias de Trabajo" required >
+            <input type="text" name="htrabajos" id="htrabajos" placeholder="Horas de Trabajo" required />
 
             <div class="buttons">
                 <button type="reset" alt="Cancelar" class="btnCancel" title="Cancelar">
@@ -63,27 +48,29 @@
         <table class="styled-table">
             <thead>
                 <tr>
+                    <th>Clave</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
-                    <th>E-mail</th>
-                    <th>Coordinacion</th>
+                    <th>Hrs. Trabajo</th>
+                    <th>Dias Trabajo</th>
                     <th>Accion</th>
                 </tr>
             </thead>
             <tbody>
-                <% results.forEach((user) => { %>
+                <% for (var i =1; i <=8;  i++ ) { %>
                 <tr>
-                    <td> <%= user.primer_nombre + ' ' + user.segundo_nombre %>   </td>
-                    <td> <%= user.apellidop + ' ' + user.apellidom %> </td>
-                    <td> <%= user.gmail %>    </td>
-                    <td> <%= user.coordinacion %> </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
                     <td>
-                        <a href="/deleteuser/<%= user.id %>" class="btnDelete">
+                        <a href="//" class="btnDelete">
                             <img class="userDel" src="img/iconDelete.svg" title="Borrar"/>
                         </a>
                     </td>
                 </tr>
-                <% }); %>
+                <% } %>
             </tbody>
         </table>
     </div>
