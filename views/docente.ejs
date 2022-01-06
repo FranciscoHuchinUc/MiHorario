@@ -19,17 +19,17 @@
             <p class="subtitle">DOCENTE</p>
         </div>
 
-        <form action="/saveUser" method="post">
-            <input type="text" name="clave" id="clave" placeholder="Clave" required>
-            <input type="text" name="primer_nombre" id="primer_nombre" placeholder="Primer Nombre" required />
+        <form action="/saveTeacher" method="post">
+            <input type="text" name="clave_docente" id="clave_docente" placeholder="Clave" required>
+            <input type="text" name="nombre" id="nombre" placeholder="Primer Nombre" required />
             <input type="text" name="segundo_nombre" id="segundo_nombre" placeholder="Segundo Nombre" required />
             <input type="text" name="apellidop" id="apellidop" placeholder="Apellido Paterno" required />
             <input type="text" name="apellidom" id="apellidom" placeholder="Apellido Materno" required />
             <input type="text" name="telefono" id="telefono" placeholder="Numero Telefonico" >
             <input type="text" name="gmail" id="gmail" placeholder="E-Mail" required />
             <input type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña" required />
-            <input type="text" name="dtrabajo" id="dtrabajo" placeholder="Dias de Trabajo" required >
-            <input type="text" name="htrabajos" id="htrabajos" placeholder="Horas de Trabajo" required />
+            <input type="text" name="dias_trabajo" id="dias_trabajo" placeholder="Dias de Trabajo" required >
+            <input type="text" name="horas" id="horas" placeholder="Horas de Trabajo" required />
 
             <div class="buttons">
                 <button type="reset" alt="Cancelar" class="btnCancel" title="Cancelar">
@@ -51,26 +51,28 @@
                     <th>Clave</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
-                    <th>Hrs. Trabajo</th>
                     <th>Dias Trabajo</th>
+                    <th>Hrs. Trabajo</th>
+                    <th>Contacto</th>
                     <th>Accion</th>
                 </tr>
             </thead>
             <tbody>
-                <% for (var i =1; i <=8;  i++ ) { %>
+                <% results.forEach((docent) => { %>
                 <tr>
-                    <td>  </td>
-                    <td>  </td>
-                    <td>  </td>
-                    <td>  </td>
-                    <td>  </td>
+                    <td> <%= docent.clave_docente %> </td>
+                    <td> <%= docent.nombre + ' ' + docent.segundo_nombre %> </td>
+                    <td> <%= docent.apellidop + ' ' + docent.apellidom %> </td>
+                    <td> <%= docent.dias_trabajo %> </td>
+                    <td> <%= docent.horas %> </td>
+                    <td> <%= docent.telefono %> </td>
                     <td>
-                        <a href="//" class="btnDelete">
+                        <a href="/deleteteachers/<%= docent.clave_docente %>" class="btnDelete">
                             <img class="userDel" src="img/iconDelete.svg" title="Borrar"/>
                         </a>
                     </td>
                 </tr>
-                <% } %>
+                <% }); %>
             </tbody>
         </table>
     </div>

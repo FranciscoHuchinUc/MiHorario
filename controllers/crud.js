@@ -71,3 +71,59 @@ exports.deleteUser = (req, res) => {
         }
     })
 }
+
+// REGISTRO DOCENTES
+
+exports.saveTeacher = (req, res) => {
+    const clave_docente = req.body.clave_docente;
+    const nombre = req.body.nombre;
+    const segundo_nombre = req.body.segundo_nombre;
+    const apellidop = req.body.apellidop;
+    const apellidom = req.body.apellidom;
+    const gmail = req.body.gmail;
+    const contrasenia = req.body.contrasenia;
+    const telefono = req.body.telefono;
+    const dias_trabajo = req.body.dias_trabajo;
+    const horas = req.body.horas;
+
+    conexion.query('INSERT INTO docentes SET ?', {
+        clave_docente:clave_docente,
+        nombre:nombre,
+        segundo_nombre:segundo_nombre,
+        apellidop:apellidop,
+        apellidom:apellidom,
+        dias_trabajo:dias_trabajo,
+        horas:horas,
+        gmail:gmail,
+        contrasenia:contrasenia,
+        telefono:telefono
+    }, (error, results) => {
+        if(error) {
+            console.log(error);
+        } else {
+            res.redirect('/docente');
+        }
+    })
+
+}
+
+exports.registeredTeachers = (req, res) => {
+    conexion.query('SELECT * FROM docentes', (error, results) => {
+        if(error){
+            throw error;
+        } else {
+            res.render('docente', {results:results});
+        }
+    })
+}
+
+exports.deleteTeachers = (req, res) => {
+    const clave_docente = req.params.clave_docente;
+    conexion.query('DELETE FROM docentes WHERE clave_docente = ?' , [clave_docente], (err, results) => {
+        if(err) {
+            throw err;
+        } else {
+            res.redirect('/docente');
+        }
+    })
+}
