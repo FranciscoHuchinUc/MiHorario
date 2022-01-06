@@ -5,12 +5,18 @@ exports.authUser = (req, res) => {
     const contrasenia = req.body.contrasenia;
     if(gmail && contrasenia) {
         conexion.query('SELECT * FROM `Usuario` WHERE `gmail` = ? AND `contrasenia` = ?', [gmail, contrasenia], (err, result, fields) => {
-            if(err) throw err
+            if(err) throw err;
 
             if(result.length <= 0) {
-                res.send('Error');
-            } else {
-                res.redirect('/dashboard');
+                res.render('login', {
+                    alert: true,
+                    alertTitle: "Error",
+                    alertMessage: "E-Mail y/o Contraseña Incorrectas",
+                    alertIcon:'error',
+                    ruta: 'login'    
+                });
+            } else {             
+				res.redirect('/dashboard');
             }
         });
     }

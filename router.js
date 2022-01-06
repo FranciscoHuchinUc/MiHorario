@@ -5,7 +5,7 @@ const conexion = require('./database/db');
 const crud = require('./controllers/crud');
 
 // PAGINA INICIAL
-router.get("/", (req, res) => {
+router.get("/login", (req, res) => {
     res.render('login');
 });
 

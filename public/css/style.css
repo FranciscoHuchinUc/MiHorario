@@ -19,6 +19,7 @@
 
 body {
     background: var(--darkGray);
+    font-family: Poppins;
 }
 
 .logo-box {
