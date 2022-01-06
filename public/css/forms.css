@@ -122,11 +122,27 @@ body {
   left: 120%;
 }
 
+.cont-box .form .btnCancel {
+  position: relative;
+  cursor: pointer;
+  height: 30px;
+  width: 100px;
+  right: 15px;
+  background: #ec2d56;
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+}
+
 .cont-box .form .buttons .btnAdd {
+  position: relative;
   cursor: pointer;
   height: 30px;
   width: 160px;
-  position: relative;
   left: 15px;
   background: var(--white);
   color: var(--black);
@@ -141,6 +157,10 @@ body {
 .cont-box .form .buttons .btnAdd:hover {
   color: var(--primaryColor);
   background: var(--formColor);
+}
+
+.cont-box .form .buttons .btnCancel:hover {
+    background: #f05879;
 }
 
 .cont-box .grid {
