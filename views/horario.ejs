@@ -8,11 +8,9 @@
 
     <link rel='stylesheet' type='text/css' media='screen' href='css/horario.css'>
 
-    <script type="text/javascript" src="js/pdf.js"></script>
-    
     <link rel="shortcut icon" href="img/iconSchule.svg">
 
-    <title>Registro Docente</title>
+    <title>Registro Horario</title>
 </head>
 <body>
 
@@ -25,7 +23,8 @@
                 <div class="cont-select">
                     <p class="tdos">DOCENTE</p>
                     <select class="docente" name="docente" id="docente">
-                        <option disabled selected >Seleccione un Docente</option>
+                        <option disabled selected>Seleccione un Docente</option>
+                        <option >Francisco Josue Huchin Uc</option>
                     </select>
                 </div>
                 <div class="cont-select">
@@ -39,26 +38,25 @@
                 <button type="reset" alt="Cancelar" class="btnCancel" title="Cancelar">
                     Cancelar
                 </button>
-                <button type="submit" alt="Agregar" class="btnAdd" title="Agregar">
+                <button id="btnAdd" type="submit" alt="Agregar" class="btnAdd" title="Agregar">
                     Registrar
                 </button>
             </form>
-        </div>
 
-        <!-- TABLA DE REGISTROS -->
+            <!-- TABLA DE REGISTROS -->
 
-        <div class="table-box" id="horario">
-            <table class="styled-table" id="table-horario">
-                <thead>
-                    <tr>
-                        <th>Hora</th>
-                        <th>Lunes</th>
-                        <th>Martes</th>
-                        <th>Miercoles</th>
-                        <th>Jueves</th>
-                        <th>Viernes</th>
-                        <th>Sabado</th>
-                    </tr>
+            <div class="table-box">
+                <table class="styled-table" id="schedule">
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miercoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                            <th>Sabado</th>
+                        </tr>
                 </thead>
                 <tbody>
                     <% for (var i =1; i <=8;  i++ ) { %>
@@ -78,4 +76,7 @@
     </div>
     
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.11/jspdf.plugin.autotable.min.js"></script>
+<script src="js/horario.js" ></script>
 </html>
