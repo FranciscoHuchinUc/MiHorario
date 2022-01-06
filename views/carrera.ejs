@@ -40,13 +40,13 @@
             </form>
 
             <div class="grid">
-                <% for (var i =1; i <=8;  i++ ) { %>
+                <% results.forEach((carrera) => { %>
                     <div class="box-sq">
                         <i class='bx bxl-trello'></i>
-                        <p class="title-g">Nombre</p>
-                        <p class="subtitle-g">Semestre(s) </p>
+                        <p class="title-g"> <%= carrera.nombre %> </p>
+                        <p class="subtitle-g"> Semestre:  <%= carrera.id_semestre %>° </p>
                     </div>
-                <% } %>
+                <% }); %>
             </div>
         </div>
     </div>

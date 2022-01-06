@@ -40,13 +40,13 @@
             </form>
 
             <div class="grid">
-                <% for (var i =1; i <=8;  i++ ) { %>
+                <% results.forEach((aula) => { %>
                     <div class="box-sq">
                         <i class='bx bxs-school'></i>
                         <p class="title-g">Edificio: A</p>
-                        <p class="subtitle-g">Aula: 1 </p>
+                        <p class="subtitle-g"> <%= aula.num_aula %> </p>
                     </div>
-                <% } %>
+                <% }); %>
             </div>
         </div>
     </div>

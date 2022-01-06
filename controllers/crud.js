@@ -72,7 +72,7 @@ exports.deleteUser = (req, res) => {
     })
 }
 
-// REGISTRO DOCENTES
+// CRUD DOCENTES
 
 exports.saveTeacher = (req, res) => {
     const clave_docente = req.body.clave_docente;
@@ -124,6 +124,30 @@ exports.deleteTeachers = (req, res) => {
             throw err;
         } else {
             res.redirect('/docente');
+        }
+    })
+}
+
+// CRUD AULA
+
+exports.registeredAula = (req, res) => {
+    conexion.query('SELECT * FROM aula', (error, results) => {
+        if(error){
+            throw error;
+        } else {
+            res.render('aula', {results:results});
+        }
+    })
+}
+
+// CRUD CARRERA
+
+exports.registeredCarrera = (req, res) => {
+    conexion.query('SELECT * FROM carrera', (error, results) => {
+        if(error){
+            throw error;
+        } else {
+            res.render('carrera', {results:results});
         }
     })
 }

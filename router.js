@@ -14,14 +14,6 @@ router.get("/dashboard", (req, res) => {
     res.render('dashboard');
 });
 
-router.get("/carrera", (req, res) => {
-    res.render('carrera');
-});
-
-router.get("/aula", (req, res) => {
-    res.render('aula');
-});
-
 router.get("/horario", (req, res) => {
     res.render('horario');
 });
@@ -35,5 +27,11 @@ router.get('/deleteuser/:id', crud.deleteUser);
 router.post('/saveTeacher', crud.saveTeacher);
 router.get('/docente', crud.registeredTeachers);
 router.get('/deleteteachers/:clave_docente', crud.deleteTeachers);
+
+router.get('/aula', crud.registeredAula);
+
+router.get('/carrera', crud.registeredCarrera);
+
+
 
 module.exports = router;
