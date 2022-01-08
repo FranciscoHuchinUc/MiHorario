@@ -233,7 +233,9 @@ body {
   height: 20px;
 }
 
-.styled-table select {
+.styled-table select,
+.styled-table .horas {
+  height: 35px;
   border: none;
   border-radius: 5px;
   outline-color: #b6b6b6;
@@ -251,7 +253,7 @@ body {
 }
 
 .styled-table .horas {
-  width: 100px;
+  width: 120px;
 }
 
 .styled-table .addrow {

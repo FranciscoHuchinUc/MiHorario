@@ -54,7 +54,7 @@
                                 </select>
                             </td>
                             <td>
-                                <input class="horas" type="time" name="horas" id="horas">
+                                <input class="horas" type="text" name="horas" id="horas" placeholder="Hora">
                             </td>
                             <td>
                                 <select name="materia" id="materia">
@@ -76,7 +76,7 @@
                                 <select name="docente" id="docente">
                                     <option disabled selected >Seleccione un Docente</option>
                                     <% docente.forEach((doc) => { %>
-                                        <option> <%= doc.primer_nombre + ' ' + doc.segundo_nombre + ' ' + doc.apellidop + ' ' + doc.apellidom %> </option>
+                                        <option> <%= doc.primer_nombre + ' ' + (doc.segundo_nombre == null ? '' : doc.segundo_nombre) + ' ' + doc.apellidop + ' ' + doc.apellidom %> </option>
                                     <% }); %>
                                 </select>
                             </td>
