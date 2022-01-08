@@ -61,7 +61,7 @@
                 <% results.forEach((docent) => { %>
                 <tr>
                     <td> <%= docent.clave_docente %> </td>
-                    <td> <%= docent.nombre + ' ' + docent.segundo_nombre %> </td>
+                    <td> <%= docent.primer_nombre + ' ' + (docent.segundo_nombre == null ? '' : docent.segundo_nombre) %> </td>
                     <td> <%= docent.apellidop + ' ' + docent.apellidom %> </td>
                     <td> <%= docent.dias_trabajo %> </td>
                     <td> <%= docent.horas %> </td>
