@@ -43,8 +43,8 @@
                 <% results.forEach((aula) => { %>
                     <div class="box-sq">
                         <i class='bx bxs-school'></i>
-                        <p class="title-g">Edificio: A</p>
-                        <p class="subtitle-g"> <%= aula.num_aula %> </p>
+                        <p class="title-g">Edificio: <%= aula.id_edificio %> </p>
+                        <p class="subtitle-g"> Aula: <%= aula.num_aula %> </p>
                     </div>
                 <% }); %>
             </div>
