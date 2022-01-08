@@ -20,24 +20,9 @@
             <h2 class="subtitle" >HORARIO</h2>
 
             <form class="form">
-                <div class="cont-select">
-                    <p class="tdos">DOCENTE</p>
-                    <select class="docente" name="docente" id="docente">
-                        <option disabled selected>Seleccione un Docente</option>
-                        <option >Francisco Josue Huchin Uc</option>
-                    </select>
-                </div>
-                <div class="cont-select">
-                    <p class="tturn">TURNO</p>
-                    <select class="turno" name="turno" id="turno">
-                        <option disabled selected >Seleccione Turno</option>
-                        <option value="M">Matutino</option>
-                        <option value="D">Despertino</option>
-                    </select>
-                </div>
-                <button type="reset" alt="Cancelar" class="btnCancel" title="Cancelar">
+                <a href="/dashboard" type="button" alt="Cancelar" class="btnCancel" title="Cancelar">
                     Cancelar
-                </button>
+                </a>
                 <button id="btnAdd" type="submit" alt="Agregar" class="btnAdd" title="Agregar">
                     Registrar
                 </button>
@@ -49,34 +34,69 @@
                 <table class="styled-table" id="schedule">
                     <thead>
                         <tr>
-                            <th>Hora</th>
-                            <th>Lunes</th>
-                            <th>Martes</th>
-                            <th>Miercoles</th>
-                            <th>Jueves</th>
-                            <th>Viernes</th>
-                            <th>Sabado</th>
+                            <th>Dia</th>
+                            <th>Horas</th>
+                            <th>Materia</th>
+                            <th>Aula</th>
+                            <th>Docente</th>
                         </tr>
                 </thead>
                 <tbody>
-                    <% for (var i =1; i <=8;  i++ ) { %>
                         <tr>
-                            <td> <%= 7 + i %> :00 - <%= 8 + i %> :00 </td>
-                            <td> <a href="//" class="btnDelete"> <i class='bx bxs-plus-circle bx-flashing-hover'></i></a> </td>
-                            <td> <a href="//" class="btnDelete"> <i class='bx bxs-plus-circle bx-flashing-hover'></i></a> </td>
-                            <td> <a href="//" class="btnDelete"> <i class='bx bxs-plus-circle bx-flashing-hover'></i></a> </td>
-                            <td> <a href="//" class="btnDelete"> <i class='bx bxs-plus-circle bx-flashing-hover'></i></a> </td>
-                            <td> <a href="//" class="btnDelete"> <i class='bx bxs-plus-circle bx-flashing-hover'></i></a> </td>
-                            <td> <a href="//" class="btnDelete"> <i class='bx bxs-plus-circle bx-flashing-hover'></i></a> </td>
+                            <td>
+                                <select class="dia" name="dia" id="dia">
+                                    <option disabled selected >Dia</option>
+                                    <option value="Lunes">Lunes</option>
+                                    <option value="Martes">Martes</option>
+                                    <option value="Miercoles">Miercoles</option>
+                                    <option value="Jueves">Jueves</option>
+                                    <option value="Viernes">Viernes</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input class="horas" type="time" name="horas" id="horas">
+                            </td>
+                            <td>
+                                <select name="materia" id="materia">
+                                    <option disabled selected >Seleccione una Materia</option>
+                                    <% materia.forEach((mat) => { %>
+                                        <option> <%= mat.nombre %> </option>
+                                    <% }); %>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="short" name="aula" id="aula">
+                                    <option disabled selected >Aula/Edificio</option>
+                                    <% aula.forEach((au) => { %>
+                                        <option> <%= au.id_edificio + '-' + au.num_aula %> </option>
+                                    <% }); %>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="docente" id="docente">
+                                    <option disabled selected >Seleccione un Docente</option>
+                                    <% docente.forEach((doc) => { %>
+                                        <option> <%= doc.primer_nombre + ' ' + doc.segundo_nombre + ' ' + doc.apellidop + ' ' + doc.apellidom %> </option>
+                                    <% }); %>
+                                </select>
+                            </td>
                         </tr>
-                    <% } %>
                 </tbody>
+                <tfoot>
+                    <tr>
+                      <td colspan="5" align="center">
+                        <button class="addrow" id="agregar" alt="Agregar" title="Agregar">
+                            <i class='bx bxs-plus-circle'></i>
+                        </button>
+                      </td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
     </div>
     
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.11/jspdf.plugin.autotable.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/addrow.js"></script>
 <script src="js/horario.js" ></script>
 </html>

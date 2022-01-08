@@ -13,5 +13,5 @@ app.use(express.static('public'));
 
 
 app.listen( 5000, () => {
-    console.log('SERVER CORRIENDO EN http://localhost:5000');
+    console.log('SERVER CORRIENDO EN http://localhost:5000/login');
 })

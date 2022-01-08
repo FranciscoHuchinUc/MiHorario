@@ -99,8 +99,8 @@ body {
   cursor: pointer;
   height: 30px;
   width: 160px;
-  right: 15%;
-  bottom: 10%;
+  right: 20%;
+  bottom: 0px;
   background: var(--primaryColor);
   color: var(--white);
   border: none;
@@ -116,12 +116,14 @@ body {
   cursor: pointer;
   height: 30px;
   width: 100px;
-  bottom: 10%;
+  bottom: 0px;
   left: 5%;
   background: #ec2d56;
   color: var(--white);
   border: none;
   border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -139,13 +141,13 @@ body {
 
 .table-box {
   position: absolute;
-  width: 67%;
+  width: 70%;
   height: 95%;
   background: var(--white);
   color: var(--black);
   border-radius: 5px;
   top: 14px;
-  right: 1%;
+  right: 3%;
   overflow: auto;
 }
 .table-box::-webkit-scrollbar {
@@ -226,11 +228,39 @@ body {
   border-radius: 0 0 5px 0;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
 .styled-table .btnDelete .userDel {
   width: 20px;
   height: 20px;
+}
+
+.styled-table select {
+  border: none;
+  border-radius: 5px;
+  outline-color: #b6b6b6;
+  color: #2E2E2E;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+  background: var(--formColor);
+}
+
+.styled-table .dia {
+  width: 100px;
+  
+}
+
+.styled-table .horas {
+  width: 100px;
+}
+
+.styled-table .addrow {
+  font-size: 30px;
+  color: var(--darkGray);
+  background-color: transparent;
+  border: none;
+}
+
+.styled-table .addrow:hover {
+  color: var(--primaryColor);
 }

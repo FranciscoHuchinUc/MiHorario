@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-const conexion = require('./database/db');
 const crud = require('./controllers/crud');
 
 // PAGINA INICIAL
@@ -12,10 +11,6 @@ router.get("/login", (req, res) => {
 // RUTAS PREDEFINIDAS
 router.get("/dashboard", (req, res) => {
     res.render('dashboard');
-});
-
-router.get("/horario", (req, res) => {
-    res.render('horario');
 });
 
 // LLAMAMOS LOS METODOS CRUDS
@@ -31,6 +26,8 @@ router.get('/deleteteachers/:clave_docente', crud.deleteTeachers);
 router.get('/aula', crud.registeredAula);
 
 router.get('/carrera', crud.registeredCarrera);
+
+router.get('/horario', crud.horario);
 
 
 

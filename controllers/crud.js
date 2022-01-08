@@ -29,8 +29,8 @@ exports.saveUser = (req, res) => {
     const apellidom = req.body.apellidom;
     const gmail = req.body.gmail;
     const contrasenia = req.body.contrasenia;
-    const coordinacion = req.body.coordinacion;
     const rol = req.body.rol;
+    const coordinacion = req.body.coordinacion;
 
     conexion.query('INSERT INTO Usuario SET ?', {
         primer_nombre:primer_nombre,
@@ -39,8 +39,8 @@ exports.saveUser = (req, res) => {
         apellidom:apellidom,
         gmail:gmail,
         contrasenia:contrasenia,
-        coordinacion:coordinacion,
-        rol:rol
+        rol:rol,
+        coordinacion:coordinacion
     }, (error, results) => {
         if(error) {
             console.log(error);
@@ -63,7 +63,7 @@ exports.registerUser = (req, res) => {
 
 exports.deleteUser = (req, res) => {
     const id = req.params.id;
-    conexion.query('DELETE FROM Usuario WHERE id = ?' , [id], (err, results) => {
+    conexion.query('DELETE FROM Usuario WHERE id_usuario = ?' , [id], (err, results) => {
         if(err) {
             throw err;
         } else {
@@ -132,11 +132,15 @@ exports.deleteTeachers = (req, res) => {
 
 exports.registeredAula = (req, res) => {
     conexion.query('SELECT * FROM aula', (error, results) => {
-        if(error){
-            throw error;
-        } else {
-            res.render('aula', {results:results});
-        }
+        conexion.query('SELECT * FROM edificio', (err, edif) => {
+            if(error){
+                throw error;
+            } else {
+                console.log(results);
+                console.log(edif);
+                res.render('aula', {results:results, edif:edif});
+            }
+        })
     })
 }
 
@@ -149,5 +153,21 @@ exports.registeredCarrera = (req, res) => {
         } else {
             res.render('carrera', {results:results});
         }
+    })
+}
+
+// CRUD HORARIO
+
+exports.horario = (req, res) => {
+    conexion.query('SELECT * FROM materia', (error, materia) => {
+        conexion.query('SELECT * FROM aula', (error, aula) => {
+            conexion.query('SELECT * FROM docentes', (error, docente) => {
+                if(error) {
+                    throw error;
+                } else {
+                    res.render('horario', {materia:materia, aula:aula, docente:docente});
+                }
+            })
+        })
     })
 }
