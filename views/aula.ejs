@@ -22,17 +22,17 @@
 
             <div class="line"></div>
 
-            <form class="form">
+            <form class="form" action="registerAula" method="POST">
                 <label>Nombre Edificio</label>
-                <input type="search" name="nombre" id="nombre" placeholder="Nombre del Edificio" required/>
+                <input type="search" name="id_edificio" id="id_edificio" placeholder="Nombre del Edificio"/>
 
                 <label>Numero de Aula</label>
-                <input type="number" name="semestre" id="semestre" max="9" min="1" placeholder="Numero de Aula" required/>
+                <input type="number" name="num_aula" id="num_aula" max="9" min="1" placeholder="Numero de Aula"/>
 
                 <div class="buttons">
-                    <button type="reset" alt="Cancelar" class="btnCancel" title="Cancelar">
+                    <a href="/dashboard" type="reset" alt="Cancelar" class="btnCancel" title="Cancelar">
                         Cancelar
-                    </button> 
+                    </a> 
                     <button type="submit" alt="Agregar" class="btnAdd" title="Agregar">
                         Registrar
                     </button>
@@ -40,11 +40,10 @@
             </form>
 
             <div class="grid">
-                <% results.forEach((aula) => { %>
+                <% edif.forEach((edif) => { %>
                     <div class="box-sq">
                         <i class='bx bxs-school'></i>
-                        <p class="title-g">Edificio: <%= aula.id_edificio %> </p>
-                        <p class="subtitle-g"> Aula: <%= aula.num_aula %> </p>
+                        <p class="title-g">Edificio: <%= edif.id_edificio %> </p>
                     </div>
                 <% }); %>
             </div>
