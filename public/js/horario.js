@@ -9,7 +9,7 @@ btnAdd.addEventListener('click', () => {
 
 function generatePDF() {
 
-    var docente = document.getElementById('docente').value;
+    var docente = document.getElementById('clave_docente').value;
 
     var doc = new jsPDF();
     doc.setFont("courier");

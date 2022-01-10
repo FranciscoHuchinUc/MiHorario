@@ -25,7 +25,8 @@
                     <select name="clave_docente" id="clave_docente">
                         <option disabled selected >Seleccione un Docente</option>
                         <% docente.forEach((doc) => { %>
-                            <option value="<%= doc.clave_docente %>"> <%= doc.primer_nombre + ' ' + (doc.segundo_nombre == null ? '' : doc.segundo_nombre) + ' ' + doc.apellidop + ' ' + doc.apellidom %> </option>
+                            <option hidden value="<%= doc.clave_docente %>"></option>
+                            <option value="<%= doc.primer_nombre + ' ' + (doc.segundo_nombre == null ? '' : doc.segundo_nombre) + ' ' + doc.apellidop + ' ' + doc.apellidom %>"> <%= doc.primer_nombre + ' ' + (doc.segundo_nombre == null ? '' : doc.segundo_nombre) + ' ' + doc.apellidop + ' ' + doc.apellidom %> </option>
                         <% }); %>
                     </select>
                 </label>
@@ -100,6 +101,8 @@
     
 </body>
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.11/jspdf.plugin.autotable.min.js"></script>
 <script src="js/addrow.js"></script>
 <script src="js/horario.js" ></script>
 </html>
