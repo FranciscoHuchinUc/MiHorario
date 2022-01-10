@@ -19,6 +19,58 @@
             <h1 class="title">REGISTRO DE</h1>
             <h2 class="subtitle" >HORARIO</h2>
 
+            <form class="f-docent">
+                <label>
+                    <p>Docente</p>
+                    <select name="clave_docente" id="clave_docente">
+                        <option disabled selected >Seleccione un Docente</option>
+                        <% docente.forEach((doc) => { %>
+                            <option value="<%= doc.clave_docente %>"> <%= doc.primer_nombre + ' ' + (doc.segundo_nombre == null ? '' : doc.segundo_nombre) + ' ' + doc.apellidop + ' ' + doc.apellidom %> </option>
+                        <% }); %>
+                    </select>
+                </label>
+                <button type="submit" title="Buscar">
+                    <i class='bx bx-search-alt'></i>
+                </button>
+            </form>
+
+            <form class="f-mat" onsubmit="addPerson(event)">
+                <!-- <input type="text" id="dia" placeholder="Dia"> -->
+                <select name="dia" id="dia">
+                    <option disabled selected> Dia </option>
+                    <option value="Lunes">Lunes</option>
+                    <option value="Martes">Martes</option>
+                    <option value="Miercoles">Miercoles</option>
+                    <option value="Jueves">Jueves</option>
+                    <option value="Viernes">Viernes</option>
+                </select>
+                
+                <br>
+                <label> De </label>
+                <select class="from" name="from" id="from">
+                    <option disabled selected> Hora </option>
+                    <% for (var i = 8; i <=16;  i++ ) { %>
+                        <option value="<%= i %>:00"> <%= i %>:00 </option>
+                    <% } %>
+                </select>
+
+                <label> A </label>
+                <select class="to" name="to" id="to">
+                    <option disabled selected> Hora </option>
+                    <% for (var i = 8; i <=16;  i++ ) { %>
+                        <option value="<%= i %>:00"> <%= i %>:00 </option>
+                    <% } %>
+                </select>
+
+                <select name="materia" id="materia">
+                    <option disabled selected >Seleccione Su Materia</option>
+                    <% mate.forEach((mat) => { %>
+                        <option value="<%= mat.nombre %>"> <%= mat.nombre %> </option>
+                    <% }); %>
+                </select>
+                <button type="submit"> Agregar </button>
+            </form>
+
             <form class="form">
                 <a href="/dashboard" type="button" alt="Cancelar" class="btnCancel" title="Cancelar">
                     Cancelar
@@ -37,66 +89,17 @@
                             <th>Dia</th>
                             <th>Horas</th>
                             <th>Materia</th>
-                            <th>Aula</th>
-                            <th>Docente</th>
                         </tr>
                 </thead>
                 <tbody>
-                        <tr>
-                            <td>
-                                <select class="dia" name="dia" id="dia">
-                                    <option disabled selected >Dia</option>
-                                    <option value="Lunes">Lunes</option>
-                                    <option value="Martes">Martes</option>
-                                    <option value="Miercoles">Miercoles</option>
-                                    <option value="Jueves">Jueves</option>
-                                    <option value="Viernes">Viernes</option>
-                                </select>
-                            </td>
-                            <td>
-                                <input class="horas" type="text" name="horas" id="horas" placeholder="Hora">
-                            </td>
-                            <td>
-                                <select name="materia" id="materia">
-                                    <option disabled selected >Seleccione una Materia</option>
-                                    <% materia.forEach((mat) => { %>
-                                        <option> <%= mat.nombre %> </option>
-                                    <% }); %>
-                                </select>
-                            </td>
-                            <td>
-                                <select class="short" name="aula" id="aula">
-                                    <option disabled selected >Aula/Edificio</option>
-                                    <% aula.forEach((au) => { %>
-                                        <option> <%= au.id_edificio + '-' + au.num_aula %> </option>
-                                    <% }); %>
-                                </select>
-                            </td>
-                            <td>
-                                <select name="docente" id="docente">
-                                    <option disabled selected >Seleccione un Docente</option>
-                                    <% docente.forEach((doc) => { %>
-                                        <option> <%= doc.primer_nombre + ' ' + (doc.segundo_nombre == null ? '' : doc.segundo_nombre) + ' ' + doc.apellidop + ' ' + doc.apellidom %> </option>
-                                    <% }); %>
-                                </select>
-                            </td>
-                        </tr>
+                    
                 </tbody>
-                <tfoot>
-                    <tr>
-                      <td colspan="5" align="center">
-                        <button class="addrow" id="agregar" alt="Agregar" title="Agregar">
-                            <i class='bx bxs-plus-circle'></i>
-                        </button>
-                      </td>
-                    </tr>
-                </tfoot>
             </table>
         </div>
     </div>
     
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <script src="js/addrow.js"></script>
 <script src="js/horario.js" ></script>
 </html>

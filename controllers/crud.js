@@ -73,7 +73,6 @@ exports.deleteUser = (req, res) => {
 }
 
 // CRUD DOCENTES
-
 exports.saveTeacher = (req, res) => {
     const clave_docente = req.body.clave_docente;
     const nombre = req.body.nombre;
@@ -107,6 +106,50 @@ exports.saveTeacher = (req, res) => {
 
 }
 
+// CRUD MATERIA DOCENTE
+exports.addMateriaTeacher = (req, res) => {
+    const clave_docente = req.params.clave_docente;
+
+    conexion.query('SELECT * FROM docentes WHERE clave_docente=?',[clave_docente], (error, docent) => {
+        conexion.query('SELECT * FROM semestre', (error, sem) => {
+            conexion.query('SELECT * FROM carrera', (error, carr) => {
+                conexion.query('SELECT * FROM materia WHERE clave_docente=?',[clave_docente], (error, mater) => {
+                    if(error) {
+                        throw error;
+                    } else {
+                        res.render('materia', {doc:docent[0], sem:sem, carr:carr, mater:mater});
+                    }
+                })
+            })
+        })
+    })
+}
+
+exports.saveMateria = (req, res) => {
+    const clave_materia = req.body.clave_materia;
+    const clave_docente = req.body.clave_docente;
+    const id_semestre = req.body.id_semestre;
+    const id_carrera = req.body.id_carrera;
+    const nombre = req.body.nombre;
+    const num_horas = req.body.num_horas;
+
+    conexion.query('INSERT INTO materia SET ?', {
+        clave_materia:clave_materia,
+        clave_docente:clave_docente,
+        id_semestre:id_semestre,
+        id_carrera:id_carrera,
+        nombre:nombre,
+        num_horas:num_horas
+    }, (error, results) => {
+        if(error) {
+            console.log(error);
+        } else {
+            res.redirect('/materia/'+clave_docente);
+        }
+    })
+
+}
+
 exports.registeredTeachers = (req, res) => {
     conexion.query('SELECT * FROM docentes', (error, results) => {
         if(error){
@@ -129,6 +172,21 @@ exports.deleteTeachers = (req, res) => {
 }
 
 // CRUD AULA
+exports.registerAula = async (req, res) => {
+    const id_edificio = req.body.id_edificio;
+    const num_aula = req.body.num_aula;
+    await conexion.query('INSERT INTO edificio SET ? ', {
+        id_edificio:id_edificio
+    }, (error, edif) => {
+        conexion.query('INSERT INTO aula SET ? ', {
+            id_edificio:id_edificio,
+            num_aula:num_aula
+        }, (error, aula) => {
+            console.log(id_edificio, num_aula);
+            res.redirect('/aula');
+        })
+    })
+}
 
 exports.registeredAula = (req, res) => {
     conexion.query('SELECT * FROM aula', (error, results) => {
@@ -136,8 +194,6 @@ exports.registeredAula = (req, res) => {
             if(error){
                 throw error;
             } else {
-                console.log(results);
-                console.log(edif);
                 res.render('aula', {results:results, edif:edif});
             }
         })
@@ -145,6 +201,21 @@ exports.registeredAula = (req, res) => {
 }
 
 // CRUD CARRERA
+exports.registerCarrera = (req, res) => {
+    const id_carrera = req.body.id_carrera;
+    const nombre = req.body.nombre;
+
+    conexion.query('INSERT INTO carrera SET ?', {
+        id_carrera:id_carrera,
+        nombre:nombre
+    }, (error, results) => {
+        if(error) {
+            console.log(error);
+        } else {
+            res.redirect('/carrera');
+        }
+    })
+}
 
 exports.registeredCarrera = (req, res) => {
     conexion.query('SELECT * FROM carrera', (error, results) => {
@@ -158,16 +229,14 @@ exports.registeredCarrera = (req, res) => {
 
 // CRUD HORARIO
 
-exports.horario = (req, res) => {
-    conexion.query('SELECT * FROM materia', (error, materia) => {
-        conexion.query('SELECT * FROM aula', (error, aula) => {
-            conexion.query('SELECT * FROM docentes', (error, docente) => {
-                if(error) {
-                    throw error;
-                } else {
-                    res.render('horario', {materia:materia, aula:aula, docente:docente});
-                }
-            })
+exports.formHorario = (req, res) => {
+    conexion.query('SELECT * FROM docentes', (error, docente) => {
+        conexion.query('SELECT * FROM materia', (error, mate) => {
+            if(error) {
+                throw error;
+            } else {
+                res.render('horario', {docente:docente, mate:mate});
+            }
         })
     })
 }
