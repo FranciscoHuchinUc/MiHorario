@@ -4,6 +4,7 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel='stylesheet' type='text/css' media='screen' href='css/registerForm.css'>
     
@@ -32,9 +33,9 @@
             <input type="text" name="horas" id="horas" placeholder="Horas de Trabajo" required />
 
             <div class="buttons">
-                <button type="reset" alt="Cancelar" class="btnCancel" title="Cancelar">
+                <a href="/dashboard" type="reset" alt="Cancelar" class="btnCancel" title="Cancelar">
                     Cancelar
-                </button> 
+                </a> 
                 <button type="submit" alt="Agregar" class="btnAdd" title="Agregar">
                     Registrar
                 </button>
@@ -64,12 +65,11 @@
                     <td> <%= docent.primer_nombre + ' ' + (docent.segundo_nombre == null ? '' : docent.segundo_nombre) %> </td>
                     <td> <%= docent.apellidop + ' ' + docent.apellidom %> </td>
                     <td> <%= docent.dias_trabajo %> </td>
-                    <td> <%= docent.horas %> </td>
+                    <td> <%= docent.restriccion_horas %> </td>
                     <td> <%= docent.telefono %> </td>
                     <td>
-                        <a href="/deleteteachers/<%= docent.clave_docente %>" class="btnDelete">
-                            <img class="userDel" src="img/iconDelete.svg" title="Borrar"/>
-                        </a>
+                        <a href="/materia/<%= docent.clave_docente %>" class='bx bxs-layer-plus iconAdd' title="Añadir Materia"></a>
+                        <a href="/deleteteachers/<%= docent.clave_docente %>" class='bx bxs-message-square-x iconDel' title="Borrar"></a>
                     </td>
                 </tr>
                 <% }); %>

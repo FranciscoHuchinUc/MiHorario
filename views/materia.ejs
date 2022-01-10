@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/registerForm.css'>
+    
+    <link rel="shortcut icon" href="/img/iconReg.svg">
+
+    <title>Registro Materia</title>
+</head>
+<body>
+
+    <div class="register-box">
+        <div class="title-box">
+            <p class="title">REGISTRO DE</p>
+            <p class="subtitle">MATERIA</p>
+        </div>
+
+        <% if(doc) { %>
+        <form action="/saveMateria" method="post">
+            <br>
+            <input hidden name="clave_docente" id="clave_docente" value="<%= doc.clave_docente %>">
+            <input type="text" value="<%= doc.primer_nombre + ' ' + (doc.segundo_nombre == null ? '' : doc.segundo_nombre) + ' ' + doc.apellidop + ' ' + doc.apellidom %>" readonly onmousedown="return false;">
+            <br>
+            <input type="text" name="clave_materia" id="clave_materia" placeholder="Clave Materia" required>
+            <div class="content-select">
+                <select class="coord" name="id_semestre" id="id_semestre">
+                    <option disabled selected >Seleccione Semestre</option>
+                    <% sem.forEach((sem) => { %>
+                        <option value="<%= sem.id_semestre %>" > <%= sem.gr_semestre %> </option>
+                    <% }); %>
+                </select>
+                <select class="coord" name="id_carrera" id="id_carrera">
+                    <option disabled selected >Seleccione La Carrera</option>
+                    <% carr.forEach((carr) => { %>
+                        <option value="<%= carr.id_carrera %>"> <%= carr.nombre %> </option>
+                    <% }); %>
+                </select>
+            </div>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+            <input type="text" name="num_horas" id="num_horas" placeholder="Horas" required>
+
+            <div class="buttons">
+                <a href="/docente" type="reset" alt="Cancelar" class="btnCancel" title="Cancelar">
+                    Cancelar
+                </a> 
+                <button type="submit" alt="Agregar" class="btnAdd" title="Agregar">
+                    Registrar
+                </button>
+            </div>
+        </form>
+        <% } %>
+    </div>
+
+    <!-- TABLA DE REGISTROS -->
+
+    <div class="table-box">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Clave Materia</th>
+                    <th>Semestre</th>
+                    <th>Carrera</th>
+                    <th>Nombre</th>
+                    <th>Horas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% mater.forEach((mat) => { %>
+                <tr>
+                    <td> <%= mat.clave_materia %> </td>
+                    <td> <%= mat.id_semestre %> </td>
+                    <td> <%= mat.id_carrera %> </td>
+                    <td> <%= mat.nombre %> </td>
+                    <td> <%= mat.num_horas %> </td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
