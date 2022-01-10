@@ -22,17 +22,17 @@
 
             <div class="line"></div>
 
-            <form class="form">
-                <label>Nombre</label>
-                <input type="search" name="nombre" id="nombre" placeholder="Nombre de la Carrera" required/>
+            <form class="form" action="registerCarrera" method="post">
+                <label>Clave Carrera</label>
+                <input type="search" name="id_carrera" id="id_carrera" placeholder="Clave de la Carrera" required/>
 
-                <label>Semestre</label>
-                <input type="number" name="semestre" id="semestre" max="9" min="1" placeholder="Cantidad de Semestres" required/>
+                <label>Nombre Carrera</label>
+                <input type="search" name="nombre" id="nombre" placeholder="Nombre Carrera" required/>
 
                 <div class="buttons">
-                    <button type="reset" alt="Cancelar" class="btnCancel" title="Cancelar">
+                    <a href="/dashboard" type="reset" alt="Cancelar" class="btnCancel" title="Cancelar">
                         Cancelar
-                    </button> 
+                    </a> 
                     <button type="submit" alt="Registrar" class="btnAdd" title="Registrar">
                         Registrar
                     </button>
