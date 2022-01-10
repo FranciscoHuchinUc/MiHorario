@@ -130,6 +130,8 @@ body {
   right: 15px;
   background: #ec2d56;
   color: var(--white);
+  text-decoration: none;
+  text-align: center;
   border: none;
   border-radius: 5px;
   font-family: 'Poppins', sans-serif;
