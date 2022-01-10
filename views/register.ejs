@@ -16,7 +16,7 @@
     <div class="register-box">
         <div class="title-box">
             <p class="title">REGISTRO DE</p>
-            <p class="subtitle">USUARIOS</p>
+            <p class="subtitle">COORDINADOR</p>
         </div>
 
         <form action="/saveUser" method="post">
@@ -42,14 +42,14 @@
                 <select class="rol" name="rol" id="rol">
                     <option disabled selected>Seleccione Su Rol</option>
                     <option value="Administrador">Administrador</option>
-                    <option value="Usuario">Usuario</option>
+                    <option value="Usuario">Coordinador</option>
                 </select>
             </div>
 
             <div class="buttons">
-                <button type="reset" alt="Cancelar" class="btnCancel" title="Cancelar">
+                <a href="/dashboard" type="reset" alt="Cancelar" class="btnCancel" title="Cancelar">
                     Cancelar
-                </button> 
+                </a> 
                 <button type="submit" alt="Agregar" class="btnAdd" title="Agregar">
                     Registrar
                 </button>
@@ -73,7 +73,7 @@
             <tbody>
                 <% results.forEach((user) => { %>
                 <tr>
-                    <td> <%= user.primer_nombre + ' ' + user.segundo_nombre %>   </td>
+                    <td> <%= user.primer_nombre + ' ' + (user.segundo_nombre == null ? '' : user.segundo_nombre) %>   </td>
                     <td> <%= user.apellidop + ' ' + user.apellidom %> </td>
                     <td> <%= user.gmail %>    </td>
                     <td> <%= user.coordinacion %> </td>
